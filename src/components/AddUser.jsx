@@ -13,7 +13,7 @@ export class AddUser extends Component {
   }
   render() {
     return (
-      <form action="">
+      <form ref={(el) => (this.myForm = el)}>
         <input
           onChange={(e) => this.setState({ firstname: e.target.value })}
           placeholder="Имя"
@@ -28,15 +28,16 @@ export class AddUser extends Component {
         <input type="checkbox" name="" id="isHappy" />
         <button
           type="button"
-          onClick={() =>
+          onClick={() => {
+            this.myForm.reset();
             this.props.onAdd({
               firstname: this.state.firstname,
               lastname: this.state.lastname,
               bio: this.state.bio,
               age: this.state.age,
               isHappy: this.state.isHappy,
-            })
-          }
+            });
+          }}
         >
           Добавить
         </button>
