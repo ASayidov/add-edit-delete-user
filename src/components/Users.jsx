@@ -7,7 +7,12 @@ export class Users extends Component {
       return (
         <div>
           {this.props.users.map((el) => (
-            <User onDelete={this.props.onDelete} key={el.id} users={el} />
+            <User
+              onEdit={this.props.onEdit}
+              onDelete={this.props.onDelete}
+              key={el.id}
+              user={el}
+            />
           ))}
         </div>
       );

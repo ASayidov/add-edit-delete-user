@@ -30,13 +30,17 @@ export class AddUser extends Component {
           type="button"
           onClick={() => {
             this.myForm.reset();
-            this.props.onAdd({
+            this.userAdd = {
               firstname: this.state.firstname,
               lastname: this.state.lastname,
               bio: this.state.bio,
               age: this.state.age,
               isHappy: this.state.isHappy,
-            });
+            };
+            if (this.props.user) {
+              this.userAdd.id = this.props.user.id;
+            }
+            this.props.onAdd(this.userAdd);
           }}
         >
           Добавить
