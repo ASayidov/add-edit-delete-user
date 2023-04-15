@@ -28,19 +28,26 @@ export class App extends Component {
       ],
     };
     this.addUser = this.addUser.bind(this);
+    this.deleteUser = this.deleteUser.bind(this);
   }
   render() {
     return (
       <div>
         <Header title="Список пользователей" />
         <main>
-          <Users users={this.state.users} />
+          <Users users={this.state.users} onDelete={this.deleteUser} />
         </main>
         <aside>
           <AddUser onAdd={this.addUser} />
         </aside>
       </div>
     );
+  }
+
+  deleteUser(id) {
+    this.setState({
+      users: this.state.users.filter((el) => el.id !== id),
+    });
   }
   addUser(user) {
     const id = this.state.users.length + 1;
