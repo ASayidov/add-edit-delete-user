@@ -22,10 +22,10 @@ export class AddUser extends Component {
           onChange={(e) => this.setState({ last_name: e.target.value })}
           placeholder="Фамилия"
         />
-        <textarea placeholder="Биография"></textarea>
-        <input type="text" placeholder="Возраст" />
+        <input type="email" placeholder="E-mail"></input>
+        <input type="url" placeholder="avatar" />
         <label htmlFor="isHappy">Счастлив?</label>
-        <input type="checkbox" name="" id="isHappy" />
+        <input type="checkbox" id="isHappy" name="isHappy" />
         <button
           type="button"
           onClick={() => {
@@ -33,8 +33,8 @@ export class AddUser extends Component {
             this.userAdd = {
               first_name: this.state.first_name,
               last_name: this.state.last_name,
-              bio: this.state.bio,
-              age: this.state.age,
+              email: this.state.email,
+              avatar: this.state.avatar,
               isHappy: this.state.isHappy,
             };
             if (this.props.user) {

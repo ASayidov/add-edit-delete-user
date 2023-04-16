@@ -27,7 +27,7 @@ export class User extends Component {
         <h3>
           {this.user.first_name} {this.user.last_name}
         </h3>
-        <img src={this.user.avatar} alt="avatar" />
+        <img src={this.user.avatar} />
         <p>{this.user.email}</p>
         <b>{this.user.isHappy ? "Счастлив :)" : "Не особо :("}</b>
 
