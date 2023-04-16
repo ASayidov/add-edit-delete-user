@@ -55,7 +55,11 @@ export class App extends Component {
     });
   }
   editUser(user) {
-    console.log(user);
+    let allUsers = this.state.users;
+    allUsers[user.id - 1] = user;
+    this.setState({ users: [] }, () => {
+      this.setState({ users: [...allUsers] });
+    });
   }
 
   addUser(user) {
