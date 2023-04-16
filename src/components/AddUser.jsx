@@ -4,8 +4,8 @@ export class AddUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstname: "",
-      lastname: "",
+      first_name: "",
+      last_name: "",
       bio: "",
       age: 1,
       isHappy: false,
@@ -15,11 +15,11 @@ export class AddUser extends Component {
     return (
       <form ref={(el) => (this.myForm = el)}>
         <input
-          onChange={(e) => this.setState({ firstname: e.target.value })}
+          onChange={(e) => this.setState({ first_name: e.target.value })}
           placeholder="Имя"
         />
         <input
-          onChange={(e) => this.setState({ lasttname: e.target.value })}
+          onChange={(e) => this.setState({ last_name: e.target.value })}
           placeholder="Фамилия"
         />
         <textarea placeholder="Биография"></textarea>
@@ -31,8 +31,8 @@ export class AddUser extends Component {
           onClick={() => {
             this.myForm.reset();
             this.userAdd = {
-              firstname: this.state.firstname,
-              lastname: this.state.lastname,
+              first_name: this.state.first_name,
+              last_name: this.state.last_name,
               bio: this.state.bio,
               age: this.state.age,
               isHappy: this.state.isHappy,

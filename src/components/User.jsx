@@ -25,9 +25,10 @@ export class User extends Component {
           className="edit-icon"
         />
         <h3>
-          {this.user.firstname} {this.user.lastname}
+          {this.user.first_name} {this.user.last_name}
         </h3>
-        <p>{this.user.bio}</p>
+        <img src={this.user.avatar} alt="avatar" />
+        <p>{this.user.email}</p>
         <b>{this.user.isHappy ? "Счастлив :)" : "Не особо :("}</b>
 
         {this.state.editForm && (
