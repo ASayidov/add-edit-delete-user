@@ -6,8 +6,8 @@ export class AddUser extends Component {
     this.state = {
       first_name: "",
       last_name: "",
-      bio: "",
-      age: 1,
+      email: "",
+      avatar: "",
       isHappy: false,
     };
   }
@@ -22,10 +22,23 @@ export class AddUser extends Component {
           onChange={(e) => this.setState({ last_name: e.target.value })}
           placeholder="Фамилия"
         />
-        <input type="email" placeholder="E-mail"></input>
-        <input type="url" placeholder="avatar" />
+        <input
+          type="email"
+          placeholder="E-mail"
+          onChange={(e) => this.setState({ email: e.target.value })}
+        ></input>
+        <input
+          type="url"
+          placeholder="Аватар"
+          onChange={(e) => this.setState({ avatar: e.target.value })}
+        />
         <label htmlFor="isHappy">Счастлив?</label>
-        <input type="checkbox" id="isHappy" name="isHappy" />
+        <input
+          type="checkbox"
+          id="isHappy"
+          name="isHappy"
+          onChange={(e) => this.setState({ isHappy: e.target.value })}
+        />
         <button
           type="button"
           onClick={() => {
